@@ -1,0 +1,17 @@
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\bin\Debug\net8.0\NexAware.HomeAI.Rag.deps.json
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\bin\Debug\net8.0\NexAware.HomeAI.Rag.dll
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\bin\Debug\net8.0\NexAware.HomeAI.Rag.pdb
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\bin\Debug\net8.0\NexAware.HomeAI.Application.dll
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\bin\Debug\net8.0\NexAware.HomeAI.Domain.dll
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\bin\Debug\net8.0\NexAware.HomeAI.Application.pdb
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\bin\Debug\net8.0\NexAware.HomeAI.Domain.pdb
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\NexAware.HomeAI.Rag.csproj.AssemblyReference.cache
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\NexAware.HomeAI.Rag.GeneratedMSBuildEditorConfig.editorconfig
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\NexAware.HomeAI.Rag.AssemblyInfoInputs.cache
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\NexAware.HomeAI.Rag.AssemblyInfo.cs
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\NexAware.HomeAI.Rag.csproj.CoreCompileInputs.cache
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\NexAware.0A455ADA.Up2Date
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\NexAware.HomeAI.Rag.dll
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\refint\NexAware.HomeAI.Rag.dll
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\NexAware.HomeAI.Rag.pdb
+C:\WorkSpace\AI\HomeBot\nexaware-home-ai\src\NexAware.HomeAI.Rag\obj\Debug\net8.0\ref\NexAware.HomeAI.Rag.dll

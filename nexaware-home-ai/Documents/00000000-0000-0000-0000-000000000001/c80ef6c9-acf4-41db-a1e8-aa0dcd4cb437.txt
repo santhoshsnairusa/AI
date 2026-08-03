@@ -1,0 +1,8 @@
+Home Wi-Fi Network Details
+Network Name (SSID): HomeNet_5G
+Password: SuperSecretWiFiPassword2024!
+Router IP Address: 192.168.1.1
+Admin Login: admin / admin123
+ISP: Comcast Xfinity
+Plan: 1000 Mbps Fiber
+Notes: Router is located in the living room entertainment center. If the internet drops, restart the router before calling Comcast.

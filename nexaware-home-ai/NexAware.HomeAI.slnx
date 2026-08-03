@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/NexAware.HomeAI.Api/NexAware.HomeAI.Api.csproj" />
+    <Project Path="src/NexAware.HomeAI.Application/NexAware.HomeAI.Application.csproj" />
+    <Project Path="src/NexAware.HomeAI.Domain/NexAware.HomeAI.Domain.csproj" />
+    <Project Path="src/NexAware.HomeAI.Infrastructure/NexAware.HomeAI.Infrastructure.csproj" />
+    <Project Path="src/NexAware.HomeAI.Rag/NexAware.HomeAI.Rag.csproj" />
+    <Project Path="src/NexAware.HomeAI.Worker/NexAware.HomeAI.Worker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/NexAware.HomeAI.EndToEndTests/NexAware.HomeAI.EndToEndTests.csproj" />
+    <Project Path="tests/NexAware.HomeAI.IntegrationTests/NexAware.HomeAI.IntegrationTests.csproj" />
+    <Project Path="tests/NexAware.HomeAI.UnitTests/NexAware.HomeAI.UnitTests.csproj" />
+  </Folder>
+</Solution>

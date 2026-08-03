@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-NexAware.HomeAI.Worker-5ca4ce60-6a95-4e04-8210-9048b3da1427</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NexAware.HomeAI.Application\NexAware.HomeAI.Application.csproj" />
+    <ProjectReference Include="..\NexAware.HomeAI.Infrastructure\NexAware.HomeAI.Infrastructure.csproj" />
+    <ProjectReference Include="..\NexAware.HomeAI.Rag\NexAware.HomeAI.Rag.csproj" />
+  </ItemGroup>
+</Project>

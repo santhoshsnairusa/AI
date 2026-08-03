@@ -1,0 +1,5 @@
+Guest Network Name (SSID): SmithFamily_Guest
+Guest Password: WelcomeToOurHome!
+Main Network Name (SSID): SmithFamily_5G
+Main Password: [Use the Guest Network instead]
+Router Location: Living room, behind the TV stand. To reboot, unplug the black power cord for 30 seconds.

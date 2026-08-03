@@ -1,0 +1,5 @@
+postgres: Database server
+ollama: Local LLM service
+api: The main backend API
+worker: Background worker service
+web: The web interface

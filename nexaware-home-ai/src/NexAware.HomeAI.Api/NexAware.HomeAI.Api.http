@@ -1,0 +1,6 @@
+@NexAware.HomeAI.Api_HostAddress = http://localhost:5157
+
+GET {{NexAware.HomeAI.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
