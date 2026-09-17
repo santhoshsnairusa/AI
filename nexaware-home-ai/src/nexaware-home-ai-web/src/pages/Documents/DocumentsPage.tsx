@@ -90,9 +90,9 @@ export function DocumentsPage() {
     const safeTitle = title.endsWith('.txt') ? title : `${title}.txt`;
     const blob = new Blob([textContent], { type: 'text/plain' });
     const file = new File([blob], safeTitle, { type: 'text/plain' });
-    
+
     uploadFile(file);
-    
+
     setTextContent('');
     setTextTitle('');
     setInputMode('file');
@@ -114,13 +114,13 @@ export function DocumentsPage() {
       </div>
 
       <div className="flex gap-4 mb-4">
-        <button 
+        <button
           onClick={() => setInputMode('file')}
           className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${inputMode === 'file' ? 'bg-primary text-white' : 'bg-surfaceHighlight text-text hover:bg-surfaceHighlight/70'}`}
         >
           <Upload size={18} /> Upload File
         </button>
-        <button 
+        <button
           onClick={() => setInputMode('text')}
           className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${inputMode === 'text' ? 'bg-primary text-white' : 'bg-surfaceHighlight text-text hover:bg-surfaceHighlight/70'}`}
         >
@@ -129,7 +129,7 @@ export function DocumentsPage() {
       </div>
 
       {inputMode === 'file' ? (
-        <div 
+        <div
           className={`glass-panel p-10 border-2 border-dashed flex flex-col items-center justify-center text-center transition-all duration-300 ${isDragging ? 'border-primary bg-primary/10' : 'border-surfaceHighlight hover:border-primary/50'}`}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
@@ -141,10 +141,10 @@ export function DocumentsPage() {
           </div>
           <h3 className="text-lg font-semibold text-text mb-1">Click or drag file to this area to upload</h3>
           <p className="text-text-muted text-sm">Support for a single PDF or text file.</p>
-          <input 
-            type="file" 
+          <input
+            type="file"
             ref={fileInputRef}
-            className="hidden" 
+            className="hidden"
             accept=".pdf,.txt,.md"
             onChange={handleFileSelect}
           />
@@ -193,41 +193,43 @@ export function DocumentsPage() {
             </div>
           ) : (
             documents.map(doc => (
-              <div key={doc.id} className="p-4 flex items-center justify-between hover:bg-surfaceHighlight/30 transition-colors">
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/20 p-3 rounded-lg text-primary">
+              <div key={doc.id} className="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:bg-surfaceHighlight/30 transition-colors">
+                <div className="flex items-center gap-4 w-full sm:w-auto overflow-hidden">
+                  <div className="bg-primary/20 p-3 rounded-lg text-primary shrink-0">
                     <FileText size={24} />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-text">{doc.originalFileName}</h4>
-                    <div className="text-xs text-text-muted flex items-center gap-3 mt-1">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-sm font-medium text-text truncate">{doc.originalFileName}</h4>
+                    <div className="text-xs text-text-muted flex items-center gap-2 mt-1">
                       <span>{formatSize(doc.fileSize)}</span>
                       <span>•</span>
                       <span>{new Date(doc.uploadedOn).toLocaleDateString()}</span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  {doc.status === 'Processed' && (
-                    <span className="flex items-center gap-1.5 text-xs font-medium text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20">
-                      <CheckCircle2 size={14} /> Processed
-                    </span>
-                  )}
-                  {doc.status === 'Pending' && (
-                    <span className="flex items-center gap-1.5 text-xs font-medium text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
-                      <Loader2 size={14} className="animate-spin" /> Indexing...
-                    </span>
-                  )}
-                  {doc.status === 'Error' && (
-                    <span className="flex items-center gap-1.5 text-xs font-medium text-rose-400 bg-rose-400/10 px-3 py-1 rounded-full border border-rose-400/20">
-                      <AlertCircle size={14} /> Error
-                    </span>
-                  )}
-                  <a 
-                    href={`${api.defaults.baseURL}/documents/${doc.id}/download?householdId=${DEMO_HOUSEHOLD_ID}`} 
-                    target="_blank" 
+                <div className="flex items-center justify-between w-full sm:w-auto sm:justify-end gap-3 mt-2 sm:mt-0">
+                  <div className="flex items-center">
+                    {doc.status === 'Processed' && (
+                      <span className="flex items-center gap-1.5 text-xs font-medium text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20">
+                        <CheckCircle2 size={14} /> Processed
+                      </span>
+                    )}
+                    {doc.status === 'Pending' && (
+                      <span className="flex items-center gap-1.5 text-xs font-medium text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
+                        <Loader2 size={14} className="animate-spin" /> Indexing...
+                      </span>
+                    )}
+                    {doc.status === 'Error' && (
+                      <span className="flex items-center gap-1.5 text-xs font-medium text-rose-400 bg-rose-400/10 px-3 py-1 rounded-full border border-rose-400/20">
+                        <AlertCircle size={14} /> Error
+                      </span>
+                    )}
+                  </div>
+                  <a
+                    href={`${api.defaults.baseURL}/documents/${doc.id}/download?householdId=${DEMO_HOUSEHOLD_ID}`}
+                    target="_blank"
                     rel="noreferrer"
-                    className="p-2 text-text-muted hover:text-primary hover:bg-primary/10 rounded-lg transition-colors ml-2"
+                    className="p-2 text-text-muted hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
                     title="View Document"
                   >
                     <Download size={18} />
