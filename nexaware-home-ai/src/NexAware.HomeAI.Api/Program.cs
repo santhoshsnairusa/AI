@@ -45,11 +45,14 @@ builder.Services.AddIdentityCore<User>(options => {
 
 var app = builder.Build();
 
-// Seed Demo Data
+// Apply Migrations and Seed Demo Data
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     
+    // Automatically run all pending migrations
+    context.Database.Migrate();
+
     var mockHouseholdId = Guid.Parse("00000000-0000-0000-0000-000000000001");
     if (!context.Households.Any(h => h.Id == mockHouseholdId))
     {
