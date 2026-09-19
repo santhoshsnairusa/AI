@@ -6,11 +6,13 @@ import { DocumentsPage } from './pages/Documents/DocumentsPage';
 import { ItemsPage } from './pages/Items/ItemsPage';
 import { ManualsPage } from './pages/Manuals/ManualsPage';
 import { HelpPage } from './pages/Help/HelpPage';
+import { InitializationPage } from './pages/Initialization/InitializationPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/setup" element={<InitializationPage />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="chat" element={<ChatPage />} />
