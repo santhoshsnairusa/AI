@@ -21,15 +21,22 @@ public class SystemCheckController : ControllerBase
     public async Task<IActionResult> GetSystemStatus()
     {
         bool dbConnected = false;
+        string? dbError = null;
         bool tablesExist = false;
+        string? tableError = null;
         bool documentsVolumeOk = false;
+        string? mountError = null;
 
         // 1. Verify Database Connection
         try
         {
             dbConnected = await _context.Database.CanConnectAsync();
+            if (!dbConnected) dbError = "Connection returned false. Is the server running and credentials correct?";
         }
-        catch { }
+        catch (System.Exception ex) 
+        { 
+            dbError = ex.Message; 
+        }
 
         // 2. Verify Tables Exist
         if (dbConnected)
@@ -39,9 +46,10 @@ public class SystemCheckController : ControllerBase
                 // Simple test against a known table, e.g. Users or Households
                 tablesExist = await _context.Users.AnyAsync() || (await _context.Users.CountAsync() >= 0);
             }
-            catch
+            catch (System.Exception ex)
             {
                 tablesExist = false;
+                tableError = ex.Message;
             }
         }
 
@@ -59,16 +67,21 @@ public class SystemCheckController : ControllerBase
             System.IO.File.Delete(testFile);
             documentsVolumeOk = true;
         }
-        catch
+        catch (System.Exception ex)
         {
             documentsVolumeOk = false;
+            mountError = ex.Message;
         }
 
         return Ok(new
         {
+            DatabaseName = _context.Database.GetDbConnection().Database,
             DatabaseConnected = dbConnected,
+            DbError = dbError,
             TablesExist = tablesExist,
+            TableError = tableError,
             DocumentsVolumeConfigured = documentsVolumeOk,
+            MountError = mountError,
             IsReady = dbConnected && tablesExist && documentsVolumeOk
         });
     }

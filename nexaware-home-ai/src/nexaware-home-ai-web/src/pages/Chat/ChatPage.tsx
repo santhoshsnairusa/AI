@@ -43,9 +43,7 @@ export function ChatPage() {
     try {
       const res = await api.get(`/conversations?householdId=${DEMO_HOUSEHOLD_ID}&userId=${DEMO_USER_ID}`);
       setConversations(res.data);
-      if (res.data.length > 0 && !activeConversation) {
-        selectConversation(res.data[0]);
-      }
+      // Wait for user to either select a conversation or create a new one!
     } catch (err) {
       console.error('Failed to load conversations', err);
     }

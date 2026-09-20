@@ -39,7 +39,7 @@ public class DocumentsController : ControllerBase
         var safeFileName = $"{Guid.NewGuid()}{extension}";
         var storagePath = Path.Combine(storageFolder, safeFileName);
 
-        using (var stream = new FileStream(storagePath, FileMode.Create))
+        using (var stream = new FileStream(storagePath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, FileOptions.Asynchronous))
         {
             await file.CopyToAsync(stream, cancellationToken);
         }
@@ -91,7 +91,7 @@ public class DocumentsController : ControllerBase
         if (!System.IO.File.Exists(document.StoragePath))
             return NotFound("File not found on disk.");
 
-        var stream = new FileStream(document.StoragePath, FileMode.Open, FileAccess.Read);
+        var stream = new FileStream(document.StoragePath, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, FileOptions.Asynchronous);
         return File(stream, document.MimeType ?? "application/octet-stream", document.OriginalFileName);
     }
 }

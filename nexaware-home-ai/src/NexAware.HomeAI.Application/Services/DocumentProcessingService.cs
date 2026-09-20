@@ -50,7 +50,7 @@ public class DocumentProcessingService : IDocumentProcessingService
             }
 
             string extractedText;
-            using (var stream = new FileStream(document.StoragePath, FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(document.StoragePath, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, FileOptions.Asynchronous))
             {
                 // 2. Parse text
                 extractedText = await _documentParser.ParseAsync(stream, document.MimeType, cancellationToken);

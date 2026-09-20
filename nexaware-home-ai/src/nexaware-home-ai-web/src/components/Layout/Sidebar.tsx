@@ -67,10 +67,14 @@ export function Sidebar({ onClose }: SidebarProps = {}) {
       </nav>
 
       <div className="p-4 mt-auto">
-        <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-text-muted hover:bg-surfaceHighlight hover:text-text transition-colors font-medium">
+        <Link
+          to="/settings"
+          onClick={onClose}
+          className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-text-muted hover:bg-surfaceHighlight hover:text-text transition-colors font-medium"
+        >
           <Settings size={20} />
           Settings
-        </button>
+        </Link>
       </div>
     </div>
   );

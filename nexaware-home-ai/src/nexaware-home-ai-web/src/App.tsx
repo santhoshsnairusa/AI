@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout';
+import { MemberLayout } from './components/Layout/MemberLayout';
 import { Dashboard } from './pages/Dashboard/Dashboard';
 import { ChatPage } from './pages/Chat/ChatPage';
 import { DocumentsPage } from './pages/Documents/DocumentsPage';
@@ -7,12 +8,20 @@ import { ItemsPage } from './pages/Items/ItemsPage';
 import { ManualsPage } from './pages/Manuals/ManualsPage';
 import { HelpPage } from './pages/Help/HelpPage';
 import { InitializationPage } from './pages/Initialization/InitializationPage';
+import { SettingsPage } from './pages/Settings/SettingsPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/setup" element={<InitializationPage />} />
+
+        {/* Dedicated Member/Restricted routes without Admin Chrome */}
+        <Route path="/member" element={<MemberLayout />}>
+          <Route path="chat" element={<ChatPage />} />
+        </Route>
+
+        {/* Complete Admin Layout routes */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="chat" element={<ChatPage />} />
@@ -20,6 +29,7 @@ function App() {
           <Route path="manuals" element={<ManualsPage />} />
           <Route path="items" element={<ItemsPage />} />
           <Route path="help" element={<HelpPage />} />
+          <Route path="settings" element={<SettingsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
